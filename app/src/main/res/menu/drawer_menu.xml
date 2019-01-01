@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"> <!-- add option to preview menu-->
+
+    <group android:checkableBehavior="single"> <!-- group items, only on item can be selected at a time, this will only change when other item is selected-->
+        <item
+            android:id="@+id/item_myVBL"
+            android:icon="@drawable/ic_myvbl"
+            android:title="My VBL" />
+
+        <item
+            android:id="@+id/item_games"
+            android:icon="@drawable/ic_myvbl"
+            android:title="Games" />
+
+        <item
+            android:id="@+id/item_players"
+            android:icon="@drawable/ic_players"
+            android:title="Players" />
+
+        <item
+            android:id="@+id/item_standings"
+            android:icon="@drawable/ic_myvbl"
+            android:title="Standings" />
+
+        <item
+            android:id="@+id/item_stats"
+            android:icon="@drawable/ic_myvbl"
+            android:title="Statistics" />
+
+        <item
+            android:id="@+id/item_settings"
+            android:icon="@drawable/ic_myvbl"
+            android:title="Settings" />
+    </group>
+
+
+</menu>
