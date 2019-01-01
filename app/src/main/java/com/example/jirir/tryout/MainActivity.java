@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         navigationView.setCheckedItem(R.id.item_home);
+
     }
 
     @Override
@@ -53,30 +54,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.item_home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.scrlv_fragment_container,
                         new FragmentHome()).commit();
+                break;
 
             case R.id.item_games:
                 getSupportFragmentManager().beginTransaction().replace(R.id.scrlv_fragment_container,
                         new FragmentGames()).commit();
+                break;
 
             case R.id.item_players:
                 getSupportFragmentManager().beginTransaction().replace(R.id.scrlv_fragment_container,
                         new FragmentPlayers()).commit();
+                break;
 
             case R.id.item_standings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.scrlv_fragment_container,
                         new FragmentStandings()).commit();
+                break;
 
             case R.id.item_stats:
                 getSupportFragmentManager().beginTransaction().replace(R.id.scrlv_fragment_container,
                         new FragmentStats()).commit();
+                break;
 
             case R.id.item_settings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.scrlv_fragment_container,
                         new FragmentSettings()).commit();
+                break;
         }
 
         drawer.closeDrawer(GravityCompat.START);
-
         return true;
     }
 
