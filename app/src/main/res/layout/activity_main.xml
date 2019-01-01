@@ -1,180 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DFDDE0"
-    tools:context=".MainActivity">
+    android:fitsSystemWindows="true">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent">
 
-            <FrameLayout
-                android:id="@+id/frml_games"
-                android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/background_light"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/txtv_title_games"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:padding="5dp"
-                        android:text="Recent Games"
-                        android:textColor="@android:color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/imgv_t1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
-
-                        <TextView
-                            android:id="@+id/txtv_t1_games"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginRight="30dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="Team 1"
-                            android:textAllCaps="true" />
-
-                        <TextView
-                            android:id="@+id/txtv_t2_games"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginRight="30dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="Team 2"
-                            android:textAllCaps="true" />
-
-                        <ImageView
-                            android:id="@+id/imgv_t2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/txtv_t1_score"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginRight="25dp"
-                            android:layout_weight="1"
-                            android:gravity="right|center"
-                            android:text="##"
-                            android:textSize="40sp" />
-
-                        <TextView
-                            android:id="@+id/txtv_t2_score"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="25dp"
-                            android:layout_weight="1"
-                            android:gravity="left|center"
-                            android:text="##"
-                            android:textSize="40sp" />
-                    </LinearLayout>
-                </LinearLayout>
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/frml_standings"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@android:color/background_light"
-                android:paddingBottom="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/frml_games">
+                android:orientation="vertical" >
 
-                <LinearLayout
+                <FrameLayout
+                    android:id="@+id/frml_games"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/txtv_title_standings"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:text="Standings"
-                        android:textColor="@android:color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                    android:layout_height="130dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/background_light"
                         android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/txtv_title_games"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imgv_t1_standings"
-                                android:layout_width="wrap_content"
-                                android:layout_height="30dp"
-                                android:layout_weight="1"
-                                android:padding="1dp"
-                                app:srcCompat="@mipmap/ic_launcher_round" />
-
-                            <TextView
-                                android:id="@+id/txtv_t1_rnk"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="##" />
-
-                            <TextView
-                                android:id="@+id/txtv_t1_name"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="10"
-                                android:gravity="left|center"
-                                android:text="name team 1"
-                                android:textAllCaps="true" />
-                        </LinearLayout>
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:text="Recent Games"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -182,272 +45,408 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:id="@+id/imgv_t2_standings"
+                                android:id="@+id/imgv_t1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="30dp"
+                                android:layout_height="40dp"
                                 android:layout_weight="1"
-                                android:padding="1dp"
                                 app:srcCompat="@mipmap/ic_launcher_round" />
 
                             <TextView
-                                android:id="@+id/txtv_t2_rnk"
+                                android:id="@+id/txtv_t1_games"
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:text="##" />
+                                android:padding="5dp"
+                                android:text="Team 1"
+                                android:textAllCaps="true" />
 
                             <TextView
-                                android:id="@+id/txtv_t2_name"
+                                android:id="@+id/txtv_t2_games"
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="10"
-                                android:gravity="left|center"
-                                android:text="name team 2"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Team 2"
                                 android:textAllCaps="true" />
+
+                            <ImageView
+                                android:id="@+id/imgv_t2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@mipmap/ic_launcher_round" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:orientation="horizontal">
 
-                            <ImageView
-                                android:id="@+id/imgv_t3_standings"
-                                android:layout_width="wrap_content"
-                                android:layout_height="30dp"
-                                android:layout_weight="1"
-                                android:padding="1dp"
-                                app:srcCompat="@mipmap/ic_launcher_round" />
-
                             <TextView
-                                android:id="@+id/txtv_t3_rnk"
+                                android:id="@+id/txtv_t1_score"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:layout_marginRight="25dp"
                                 android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="##" />
+                                android:gravity="right|center"
+                                android:text="##"
+                                android:textSize="40sp" />
 
                             <TextView
-                                android:id="@+id/txtv_t3_name"
+                                android:id="@+id/txtv_t2_score"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="10"
+                                android:layout_marginLeft="25dp"
+                                android:layout_weight="1"
                                 android:gravity="left|center"
-                                android:text="name team 3"
-                                android:textAllCaps="true" />
+                                android:text="##"
+                                android:textSize="40sp" />
                         </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imgv_t4_standings"
-                                android:layout_width="wrap_content"
-                                android:layout_height="30dp"
-                                android:layout_weight="1"
-                                android:padding="1dp"
-                                app:srcCompat="@mipmap/ic_launcher_round" />
-
-                            <TextView
-                                android:id="@+id/txtv_t4_rnk"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="##" />
-
-                            <TextView
-                                android:id="@+id/txtv_t4_name"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="10"
-                                android:gravity="left|center"
-                                android:text="name team 4"
-                                android:textAllCaps="true" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imgv_t5_standings"
-                                android:layout_width="wrap_content"
-                                android:layout_height="30dp"
-                                android:layout_weight="1"
-                                android:padding="1dp"
-                                app:srcCompat="@mipmap/ic_launcher_round" />
-
-                            <TextView
-                                android:id="@+id/txtv_t5_rnk"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="##" />
-
-                            <TextView
-                                android:id="@+id/txtv_t5_name"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="10"
-                                android:gravity="left|center"
-                                android:text="name team 5"
-                                android:textAllCaps="true" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imgv_t6_standings"
-                                android:layout_width="wrap_content"
-                                android:layout_height="30dp"
-                                android:layout_weight="1"
-                                android:padding="1dp"
-                                app:srcCompat="@mipmap/ic_launcher_round" />
-
-                            <TextView
-                                android:id="@+id/txtv_t6_rnk"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="##" />
-
-                            <TextView
-                                android:id="@+id/txtv_t6_name"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="10"
-                                android:gravity="left|center"
-                                android:text="name team 6"
-                                android:textAllCaps="true" />
-                        </LinearLayout>
-
                     </LinearLayout>
+                </FrameLayout>
 
-                </LinearLayout>
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/frml_players"
-                android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:layout_marginTop="10dp"
-                android:background="@android:color/background_light"
-                android:fadingEdge="horizontal|vertical"
-                app:layout_constraintTop_toBottomOf="@+id/frml_standings">
-
-                <LinearLayout
+                <FrameLayout
+                    android:id="@+id/frml_standings"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/imageView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:padding="10dp"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/background_light"
+                    android:paddingBottom="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/frml_games">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp">
+                        android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/txtv_name_players"
-                            android:layout_width="match_parent"
+                            android:id="@+id/txtv_title_standings"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="2dp"
-                            android:text="name sirname"
-                            android:textAllCaps="true" />
+                            android:layout_gravity="center"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Standings"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/txtv_age_players"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="2dp"
-                            android:padding="2dp"
-                            android:text="age: ##"
-                            android:textAllCaps="true" />
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/txtv_teamnm_players"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="2dp"
-                            android:text="teamname"
-                            android:textAllCaps="true" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imgv_t1_standings"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:padding="1dp"
+                                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                                <TextView
+                                    android:id="@+id/txtv_t1_rnk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="##" />
+
+                                <TextView
+                                    android:id="@+id/txtv_t1_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="10"
+                                    android:gravity="left|center"
+                                    android:text="name team 1"
+                                    android:textAllCaps="true" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imgv_t2_standings"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:padding="1dp"
+                                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                                <TextView
+                                    android:id="@+id/txtv_t2_rnk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="##" />
+
+                                <TextView
+                                    android:id="@+id/txtv_t2_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="10"
+                                    android:gravity="left|center"
+                                    android:text="name team 2"
+                                    android:textAllCaps="true" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imgv_t3_standings"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:padding="1dp"
+                                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                                <TextView
+                                    android:id="@+id/txtv_t3_rnk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="##" />
+
+                                <TextView
+                                    android:id="@+id/txtv_t3_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="10"
+                                    android:gravity="left|center"
+                                    android:text="name team 3"
+                                    android:textAllCaps="true" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imgv_t4_standings"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:padding="1dp"
+                                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                                <TextView
+                                    android:id="@+id/txtv_t4_rnk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="##" />
+
+                                <TextView
+                                    android:id="@+id/txtv_t4_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="10"
+                                    android:gravity="left|center"
+                                    android:text="name team 4"
+                                    android:textAllCaps="true" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imgv_t5_standings"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:padding="1dp"
+                                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                                <TextView
+                                    android:id="@+id/txtv_t5_rnk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="##" />
+
+                                <TextView
+                                    android:id="@+id/txtv_t5_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="10"
+                                    android:gravity="left|center"
+                                    android:text="name team 5"
+                                    android:textAllCaps="true" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imgv_t6_standings"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:padding="1dp"
+                                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                                <TextView
+                                    android:id="@+id/txtv_t6_rnk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="##" />
+
+                                <TextView
+                                    android:id="@+id/txtv_t6_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="10"
+                                    android:gravity="left|center"
+                                    android:text="name team 6"
+                                    android:textAllCaps="true" />
+                            </LinearLayout>
+
+                        </LinearLayout>
 
                     </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/frml_players"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/background_light"
+                    android:fadingEdge="horizontal|vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/frml_standings">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingTop="10dp">
+                        android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/txtv_ppg_players"
+                        <ImageView
+                            android:id="@+id/imageView5"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="2dp"
-                            android:text="##.# ppg"
-                            android:textAllCaps="true" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
 
-                        <TextView
-                            android:id="@+id/txtv_apg_players"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="2dp"
-                            android:text="##.# APG" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp">
 
-                        <TextView
-                            android:id="@+id/txtv_rpg_players"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="2dp"
-                            android:text="##.# RPG" />
+                            <TextView
+                                android:id="@+id/txtv_name_players"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp"
+                                android:text="name sirname"
+                                android:textAllCaps="true" />
 
-                        <TextView
-                            android:id="@+id/txtv_fpg_players"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="2dp"
-                            android:text="##.# FPG" />
+                            <TextView
+                                android:id="@+id/txtv_age_players"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp"
+                                android:padding="2dp"
+                                android:text="age: ##"
+                                android:textAllCaps="true" />
 
-                        <TextView
-                            android:id="@+id/txtv_mpg_players"
+                            <TextView
+                                android:id="@+id/txtv_teamnm_players"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="2dp"
+                                android:text="teamname"
+                                android:textAllCaps="true" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="2dp"
-                            android:text="##.# MPG" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingTop="10dp">
+
+                            <TextView
+                                android:id="@+id/txtv_ppg_players"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="2dp"
+                                android:text="##.# ppg"
+                                android:textAllCaps="true" />
+
+                            <TextView
+                                android:id="@+id/txtv_apg_players"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="2dp"
+                                android:text="##.# APG" />
+
+                            <TextView
+                                android:id="@+id/txtv_rpg_players"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="2dp"
+                                android:text="##.# RPG" />
+
+                            <TextView
+                                android:id="@+id/txtv_fpg_players"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="2dp"
+                                android:text="##.# FPG" />
+
+                            <TextView
+                                android:id="@+id/txtv_mpg_players"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="2dp"
+                                android:text="##.# MPG" />
+                        </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-            </FrameLayout>
+                </FrameLayout>
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:layout_marginTop="10dp"
-                android:background="@android:color/background_light">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/background_light">
 
-            </FrameLayout>
+                </FrameLayout>
 
-        </LinearLayout>
-    </ScrollView>
+            </LinearLayout>
+        </ScrollView>
 
-</android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.DrawerLayout>
