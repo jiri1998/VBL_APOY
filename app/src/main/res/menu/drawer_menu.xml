@@ -5,7 +5,7 @@
 
     <group android:checkableBehavior="single"> <!-- group items, only on item can be selected at a time, this will only change when other item is selected-->
         <item
-            android:id="@+id/item_myVBL"
+            android:id="@+id/item_home"
             android:icon="@drawable/ic_myvbl"
             android:title="My VBL" />
 
