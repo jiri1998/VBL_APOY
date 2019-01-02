@@ -9,7 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -25,18 +29,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // zet toolbar als actionbar
+
         Toolbar toolbar = findViewById(R.id.tlb_toolbar);
         setSupportActionBar(toolbar);
+
+        // instanties
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.navv_navview);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // code voor juiste functionering burger icon en menu
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_closed);
 
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        // zet home als Main Fragment wanneer app wordt geopend
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.scrlv_fragment_container,
@@ -47,8 +59,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    // Menu code
+
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
 
         switch (menuItem.getItemId()) {
             case R.id.item_home:
