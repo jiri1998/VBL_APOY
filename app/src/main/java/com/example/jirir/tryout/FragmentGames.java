@@ -17,19 +17,24 @@ import java.util.Date;
 
 public class FragmentGames extends Fragment {
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_games, container, false);
 
-        Game one = new Game("01/02/2019","Antwerp Giants", "BBC Floorcouture® Zoersel");
-        Game two = new Game("01/02/2019", "Antwerp Giants", "BBC Floorcouture® Zoersel");
+        Game one = new Game("02/01/2019","Antwerp Giants", "BBC Floorcouture® Zoersel", 88, 95);
+        Game two = new Game("05/01/2019", "Antwerp Giants", "BBC Floorcouture® Zoersel", 64, 45);
+        Game three = new Game("06/01/2019", "Antwerp Giants", "BBC Floorcouture® Zoersel", 99, 76);
+        Game four = new Game("08/01/2019", "Antwerp Giants", "BBC Floorcouture® Zoersel", 100, 102);
+        Game five = new Game("12/01/2019", "Antwerp Giants", "BBC Floorcouture® Zoersel", 101, 88);
 
         ArrayList<Game> gamesList = new ArrayList<>();
         gamesList.add(one);
         gamesList.add(two);
+        gamesList.add(three);
+        gamesList.add(four);
+        gamesList.add(five);
 
         ListView listView = view.findViewById(R.id.listv_games);
 

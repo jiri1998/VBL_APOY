@@ -35,10 +35,10 @@ public class GamesListAdapter extends ArrayAdapter<Game> {
         String date = getItem(position).getDate();
         String homeName = getItem(position).getHome_team_name();
         String awayName = getItem(position).getAway_team_name();
-        //Integer homeScore = getItem(position).getHome_team_score();
-        //Integer awayScore = getItem(position).getAway_team_score();
+        Integer homeScore = getItem(position).getHome_team_score();
+        Integer awayScore = getItem(position).getAway_team_score();
 
-        Game game = new Game(date, homeName, awayName /*,homeScore, awayScore*/);
+        Game game = new Game(date, homeName, awayName ,homeScore, awayScore);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mRecource, parent,false);
@@ -46,14 +46,14 @@ public class GamesListAdapter extends ArrayAdapter<Game> {
         TextView txtvdate = (TextView) convertView.findViewById(R.id.txtv_date_games);
         TextView txtvhname = (TextView) convertView.findViewById(R.id.txtv_games_hname);
         TextView txtvaname = (TextView) convertView.findViewById(R.id.txtv_games_aname);
-        //TextView txtvhscore = (TextView) convertView.findViewById(R.id.txtv_games_hscr);
-        //TextView txtvascore = (TextView) convertView.findViewById(R.id.txtv_games_ascr);
+        TextView txtvhscore = (TextView) convertView.findViewById(R.id.txtv_games_hscr);
+        TextView txtvascore = (TextView) convertView.findViewById(R.id.txtv_games_ascr);
 
         txtvdate.setText(date);
         txtvhname.setText(homeName);
         txtvaname.setText(awayName);
-        //txtvhscore.setText(homeScore);
-        //txtvascore.setText(awayScore);
+        txtvhscore.setText(homeScore.toString());
+        txtvascore.setText(awayScore.toString());
 
         return convertView;
     }
