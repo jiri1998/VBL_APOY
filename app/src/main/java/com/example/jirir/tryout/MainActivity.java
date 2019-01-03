@@ -1,6 +1,5 @@
 package com.example.jirir.tryout;
 
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -9,11 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.ListView;
-import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Date;
+import com.example.jirir.tryout.Fragments.FragmentGames;
+import com.example.jirir.tryout.Fragments.FragmentHome;
+import com.example.jirir.tryout.Fragments.FragmentPlayers;
+import com.example.jirir.tryout.Fragments.FragmentSettings;
+import com.example.jirir.tryout.Fragments.FragmentStandings;
+import com.example.jirir.tryout.Fragments.FragmentStats;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

@@ -1,4 +1,4 @@
-package com.example.jirir.tryout;
+package com.example.jirir.tryout.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,10 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FragmentStats extends Fragment {
+import com.example.jirir.tryout.R;
+
+public class FragmentSettings extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_stats, container, false);
+        return inflater.inflate(R.layout.fragment_settings, container, false);
     }
 }

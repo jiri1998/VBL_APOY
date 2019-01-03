@@ -1,4 +1,4 @@
-package com.example.jirir.tryout;
+package com.example.jirir.tryout.Fragments;
 
 import android.media.Image;
 import android.os.Bundle;
@@ -11,6 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
+
+import com.example.jirir.tryout.Game;
+import com.example.jirir.tryout.GamesListAdapter;
+import com.example.jirir.tryout.R;
 
 import java.util.ArrayList;
 import java.util.Date;
