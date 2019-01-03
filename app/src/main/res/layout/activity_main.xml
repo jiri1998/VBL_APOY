@@ -21,12 +21,12 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <ScrollView
+        <FrameLayout
             android:id="@+id/scrlv_fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        </ScrollView>
+        </FrameLayout>
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
