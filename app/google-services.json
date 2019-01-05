@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "928511875600",
+    "firebase_url": "https://vblapoy.firebaseio.com",
+    "project_id": "vblapoy",
+    "storage_bucket": "vblapoy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928511875600:android:8e2178cd9b36ec06",
+        "android_client_info": {
+          "package_name": "com.example.jirir.tryout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928511875600-377rfp2bnm6iobmtpivl0t6io152a8qk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jirir.tryout",
+            "certificate_hash": "4445845327d734d03d214692d66ab42ee5bc385c"
+          }
+        },
+        {
+          "client_id": "928511875600-3r1is91dq683uu72co17epcavnr3tps1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYQJQaqysnlBCR4H3A044zbimjhVkZsf8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928511875600-3r1is91dq683uu72co17epcavnr3tps1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
