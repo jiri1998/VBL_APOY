@@ -38,11 +38,11 @@ public class FragmentGames extends Fragment {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private DocumentReference dbRef = db.document("Games/Game1");
 
-    String[] dates;
-    String[] names_home;
-    String[] names_away;
-    Integer[] scores_home;
-    Integer[] scores_away;
+    String[] dates = {"06/01/2019"};
+    String[] names_home = {"BBC Floorcouture® Zoersel"};
+    String[] names_away = {"BBC Lira Nijlen"};
+    Integer[] scores_home = {70};
+    Integer[] scores_away = {65};
 
     @Nullable
     @Override
