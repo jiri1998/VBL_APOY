@@ -11,6 +11,10 @@ public class Game {
     private Integer home_team_score;
     private Integer away_team_score;
 
+    public Game(){
+
+    }
+
     public Game(String date, String home_team_name, String away_team_name, Integer home_team_score, Integer away_team_score) {
         this.date = date;
         this.home_team_name = home_team_name;

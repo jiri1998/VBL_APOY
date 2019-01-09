@@ -3,11 +3,14 @@ package com.example.jirir.tryout;
 import android.content.Context;
 import android.nfc.Tag;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.example.jirir.tryout.Fragments.FragmentGames;
 
 import org.w3c.dom.Text;
 
@@ -16,9 +19,56 @@ import java.util.Date;
 import java.util.List;
 import java.util.zip.Inflater;
 
-public class GamesListAdapter extends ArrayAdapter<Game> {
+public class GamesListAdapter extends RecyclerView.Adapter<GamesListAdapter.Viewholder> {
 
+    public List<Game> gamesList;
     private static final String TAG = "GamesListAdapter";
+    private Context mContext;
+    int mRecource;
+
+    public GamesListAdapter(List<Game> gamesList) {
+        this.gamesList = gamesList;
+    }
+
+    @NonNull
+    @Override
+    public Viewholder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_games, viewGroup, false);
+        return new Viewholder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull Viewholder viewholder, int position) {
+        viewholder.txtvdate.setText(gamesList.get(position).getDate());
+    }
+
+    @Override
+    public int getItemCount() {
+        return gamesList.size();
+    }
+
+    public class Viewholder extends RecyclerView.ViewHolder{
+
+        View mView;
+        public TextView txtvdate;
+        public TextView txtvhname;
+        public TextView txtvaname;
+        public TextView txtvhscore;
+        public TextView txtvascore;
+
+        public Viewholder(@NonNull View itemView) {
+            super(itemView);
+            mView = itemView;
+
+            txtvdate = (TextView) mView.findViewById(R.id.txtv_date_games);
+            txtvhname = (TextView) mView.findViewById(R.id.txtv_games_hname);
+            txtvaname = (TextView) mView.findViewById(R.id.txtv_games_aname);
+            txtvhscore = (TextView) mView.findViewById(R.id.txtv_games_hscr);
+            txtvascore = (TextView) mView.findViewById(R.id.txtv_games_ascr);
+        }
+    }
+
+    /*private static final String TAG = "GamesListAdapter";
     private Context mContext;
     int mRecource;
 
@@ -56,5 +106,5 @@ public class GamesListAdapter extends ArrayAdapter<Game> {
         txtvascore.setText(awayScore.toString());
 
         return convertView;
-    }
+    }*/
 }

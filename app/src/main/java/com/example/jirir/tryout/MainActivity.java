@@ -10,7 +10,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -23,26 +26,22 @@ import com.example.jirir.tryout.Fragments.FragmentStandings;
 import com.example.jirir.tryout.Fragments.FragmentStats;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final String Key_date = "date";
-    private static final String Key_name_home = "name_home";
-    private static final String Key_name_away = "name_away";
-    private static final String Key_score_home = "score_home";
-    private static final String Key_score_away = "score_away";
-
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private DocumentReference dbRef = db.document("Games/Game1");
-
-    private final String[] dates = {"06/01/2019"};
-    String[] names_home = {"BBC Floorcouture® Zoersel"};
-    String[] names_away = {"BBC Lira Nijlen"};
-    Integer[] scores_home = {70};
-    Integer[] scores_away = {65};
+    private static final String TAG = "MainActivity";
 
     private DrawerLayout drawer;
 
@@ -81,34 +80,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    //
-
-    public void database(View view){
-
-        dbRef.get().
-                addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if (documentSnapshot.exists()){
-                            dates[0] = documentSnapshot.getString(Key_date);
-                            names_home[0] = documentSnapshot.getString(Key_name_home);
-                            names_away[0] = documentSnapshot.getString(Key_name_away);
-                            scores_home[0] = documentSnapshot.getDouble(Key_score_home).intValue();
-                            scores_away[0] = documentSnapshot.getDouble(Key_score_away).intValue();
-                        }
-                        else{
-                            Toast.makeText(MainActivity.this, "failed to load games from database", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                    }
-                });
-    }
-
     // Menu code
 
     @Override
@@ -132,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.item_games:
                 Bundle bundlefg = new Bundle();
-                //bundlefg.putString("tmname", "Hopelijk Werkt dit");
+                //bundlefg.putStringArrayList("tmname", gamesList);
                 fragmentGames.setArguments(bundlefg);
                 transaction.replace(R.id.scrlv_fragment_container,fragmentGames).commit();
                 break;

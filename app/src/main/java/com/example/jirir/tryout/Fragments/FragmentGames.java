@@ -6,6 +6,8 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,44 +22,62 @@ import com.example.jirir.tryout.MainActivity;
 import com.example.jirir.tryout.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class FragmentGames extends Fragment {
 
     private static final String TAG = "FragmentGames";
+    private FirebaseFirestore db;
+    private RecyclerView gamesListView;
+    private GamesListAdapter gamesListAdapter;
+    private List<Game> gamesList;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        //items in list zetten
+        gamesList = new ArrayList<>();
+        gamesListAdapter = new GamesListAdapter(gamesList);
         View view = inflater.inflate(R.layout.fragment_games, container, false);
 
-        Bundle b = getArguments();
-        String result = b.getString("tmname");
-        Log.d(TAG, b.getString("tmname"));
+        // database
+        gamesListView = (RecyclerView) view.findViewById(R.id.listv_games);
+        gamesListView.setHasFixedSize(true);
+        gamesListView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        gamesListView.setAdapter(gamesListAdapter);
 
-        Game two = new Game("05/01/2019", result, "BBC Floorcouture® Zoersel", 64, 45);
-        Game three = new Game("06/01/2019", "Antwerp Giants", "BBC Floorcouture® Zoersel", 99, 76);
-        Game four = new Game("08/01/2019", "Antwerp Giants", "BBC Floorcouture® Zoersel", 100, 102);
-        Game five = new Game("12/01/2019", "Antwerp Giants", "BBC Floorcouture® Zoersel", 101, 88);
+        db = FirebaseFirestore.getInstance();
 
-        ArrayList<Game> gamesList = new ArrayList<>();
-        gamesList.add(two);
-        gamesList.add(three);
-        gamesList.add(four);
-        gamesList.add(five);
+        db.collection("Games").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
+                if (e != null){
+                    Log.d(TAG, "error: " + e.getMessage());
+                }
 
-        ListView listView = view.findViewById(R.id.listv_games);
+                for (DocumentChange doc: queryDocumentSnapshots.getDocumentChanges()){
+                    if (doc.getType() == DocumentChange.Type.ADDED){
 
-        GamesListAdapter adapter = new GamesListAdapter(getContext(), R.layout.adapter_games, gamesList);
-        listView.setAdapter(adapter);
+                        String date = doc.getDocument().getString("date");
+                        Log.d(TAG, date);
+                        Game game = doc.getDocument().toObject(Game.class);
+                        gamesList.add(game);
+                    }
+                }
+            }
+        });
 
+        //items in list zetten
         return view;
     }
 }
